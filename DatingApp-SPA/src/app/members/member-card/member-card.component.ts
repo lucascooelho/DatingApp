@@ -7,7 +7,7 @@ import { User } from '../../_models/user';
   styleUrls: ['./member-card.component.css']
 })
 export class MemberCardComponent implements OnInit {
-  @Input() user: User[];
+  @Input() user: User;
 
   constructor() { }
 
