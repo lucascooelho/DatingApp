@@ -3,6 +3,7 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
+import { ListsResolver } from './_resolvers/lists.resolver';
 import { AlertifyService } from './_services/alertify.service';
 import { AuthGuard } from './_guards/auth.guard';
 import { UserService } from './_services/user.service';
@@ -74,6 +75,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       FileUploadModule,
       JwtModule.forRoot({
          config: {
+            // tslint:disable-next-line: object-literal-shorthand
             tokenGetter: tokenGetter,
             whitelistedDomains: ['localhost:5000'],
             blacklistedRoutes: ['localhost:5000/api/auth']
@@ -90,6 +92,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       MemberListResolver,
       MemberEditResolver,
       PreventUnsavedChanges,
+      ListsResolver,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
    ],
    bootstrap: [
